@@ -3,420 +3,443 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <link href="js/jquery-ui-1.12.1/jquery-ui.min.css">
-        <script src="js/jquery.min.js"></script>
-        <link href="regpage.css" rel="stylesheet" type="text/css">
+        <link href="css/main.css" rel="stylesheet" type="text/css">
         <link href="css/font-awesome-4.7.0/fa/css/font-awesome.min.css" rel="stylesheet" >
         <link href='https://fonts.googleapis.com/css?family=Lato' rel="stylesheet" type="text/css">
-        <!-- Air Datepicker extension-->
+        <link href='css/flatpicker.min.css' rel="stylesheet" type="text/css">
+        <script src="js/flatpicker.min.js"></script>
+        <script src="js/popper.js"></script>
+        <link href='css/airbnb.css  
+        .' rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div class="parent">
-            <div class="form">
-            <!-- Title -->
-            <p id="form-title">Register</p>
-            <hr>
+        <!-- Floating Menu Bar-->
+        <div id="navbar"></div>
+        
+        <div class="form-center">
+            <!-- Title-->
+            <h1>Register</h1>
             <br>
-            <!-- Email and username div -->
-                <!-- Email -->
-            <div class="float-container">
-                <div><label for="email" class="inner-label">Email</label>
-                <input type="text" id="email" class="email">
-            </div><br>
-                <!-- Username -->
-                <label for="username" class="inner-label">Username</label>
-                <input type="text" id="username">
-            </div>
-            <br>
-            <!-- Password div -->
-            <div id="password-container">
-                <!-- Password -->
-                <label for="pw" class="inner-label">Password</label>
-                <input type="password" class="password" id="pw">
-                <span class="password-toggle-button"><i id="password-toggle" class="fa fa-eye" aria-hidden="true"></i></span>
-                <!-- Password caution text -->
-                <div class="warn-text"><i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i> Password should be a minimum of 8 characters</div>
-                <!-- Confirm Password -->
-                <label for="pwconfirm" class="inner-label">Retype Password</label>
-                <input type="password" class="password" id="pwconfirm">
-                <span class="password-toggle-button"><i id="password-toggle" class="fa fa-eye"></i></span>
+            <!-- main inputs -->
+
+            <!--Username/Name tab <0> -->
+            
+            <div class="tab">
+                <!-- name and username -->
+                <div id="float-container" class="float-container">
+                    <label for="firstname">First Name</label>
+                    <input id="firstname" class="floatField" type="text">
+                </div>
                 <br>
-                <!-- Password Match text div-->
-                <div class="password-match"><i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i> Passwords do not match!</div>                
-                
+                <br>
+                <br>
+                <div id="float-container" class="float-container">
+                    <label for="lastname">Last Name</label>
+                    <input id="lastname" class="floatField" type="text">
+                </div>
+                <br>
+                <br>
             </div>
-                <!-- First Name-->
-                <label class="inner-label" for="first-name">First Name</label>
-                <input type="text" autocomplete="on" class="form-textbox " id="first-name">
-                <!-- Last Name--><br><br>
-                <label class="inner-label" for="last-name">Last Name</label>
-                <input type="text" autocomplete="on" class="form-textbox " id="last-name">
-                <!-- Gender --><br><br>
-                <span class="section-header">Gender:</span><br>
-                    <input type="radio" class="form-radiobox" id="male" name="gender">
-                    <label for="male">Male</label>
-                    <input type="radio" class="form-radiobox" id="female" name="gender">
-                    <label for="female">Female</label>
-                    <input type="radio" class="form-radiobox" id="other" name="gender">
-                    <label for="other">Other</label>
-                <!-- Date of Birth --><br><br>
-                <div id="date-of-birth"><label for="datepicker" class="section-header">Date of Birth:</label><br>
-                <input type="text" id="datepicker-here" /></div>
-                <!-- Aadhar --><br><br>
-                <label class="inner-label" for="aadhar-number">Aadhar Number</label>
-                <input type="text" class="form-textbox" id="aadhar-number">
-                <!-- State --><br><br>
-                <div id="state-wrapper"><select id="state" name="state">
-                    <optgroup class="option-wrapper">
-                    <option selected disabled> State </option>
-                    <option> Andhra Pradesh</option>
-                    <option> Arunachal Pradesh</option>
-                    <option> Assam </option>
-                    <option> Bihar </option>
-                    <option> Chhattisgarh</option>
-                    <option> Goa </option>
-                    <option> Gujarat </option>
-                    <option> Haryana </option>
-                    <option> Himachal Pradesh </option>
-                    <option> Jharkhand </option>
-                    <option> Karnataka</option>
-                    <option> Kerala </option>
-                    <option> Madhya Pradesh </option>
-                    <option> Maharashtra </option>
-                    <option> Manipur </option>
-                    <option> Megalaya </option>
-                    <option> Mizoram </option>
-                    <option> Nagaland </option>
-                    <option> Odisha </option>
-                    <option> Punjab </option>
-                    <option> Rajasthan </option>
-                    <option> Sikkim </option>
-                    <option> Tamil Nadu </option>
-                    <option> Telengana </option>
-                    <option> Tripura </option>
-                    <option> Uttar Pradesh </option>
-                    <option> Utarakhand </option>
-                    <option> West Bengal </option>
-                </optgroup>
-                </select></div>
-                <!-- Country --><br>
-                <div id="country-wrapper"><select id="country" name="country">
-                    <optgroup class="option-wrapper">
-                    <option selected disabled> Country </option>
-                    <option value="Afganistan">Afghanistan</option>
-                    <option value="Albania">Albania</option>
-                    <option value="Algeria">Algeria</option>
-                    <option value="American Samoa">American Samoa</option>
-                    <option value="Andorra">Andorra</option>
-                    <option value="Angola">Angola</option>
-                    <option value="Anguilla">Anguilla</option>
-                    <option value="Antigua & Barbuda">Antigua & Barbuda</option>
-                    <option value="Argentina">Argentina</option>
-                    <option value="Armenia">Armenia</option>
-                    <option value="Aruba">Aruba</option>
-                    <option value="Australia">Australia</option>
-                    <option value="Austria">Austria</option>
-                    <option value="Azerbaijan">Azerbaijan</option>
-                    <option value="Bahamas">Bahamas</option>
-                    <option value="Bahrain">Bahrain</option>
-                    <option value="Bangladesh">Bangladesh</option>
-                    <option value="Barbados">Barbados</option>
-                    <option value="Belarus">Belarus</option>
-                    <option value="Belgium">Belgium</option>
-                    <option value="Belize">Belize</option>
-                    <option value="Benin">Benin</option>
-                    <option value="Bermuda">Bermuda</option>
-                    <option value="Bhutan">Bhutan</option>
-                    <option value="Bolivia">Bolivia</option>
-                    <option value="Bonaire">Bonaire</option>
-                    <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
-                    <option value="Botswana">Botswana</option>
-                    <option value="Brazil">Brazil</option>
-                    <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
-                    <option value="Brunei">Brunei</option>
-                    <option value="Bulgaria">Bulgaria</option>
-                    <option value="Burkina Faso">Burkina Faso</option>
-                    <option value="Burundi">Burundi</option>
-                    <option value="Cambodia">Cambodia</option>
-                    <option value="Cameroon">Cameroon</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Canary Islands">Canary Islands</option>
-                    <option value="Cape Verde">Cape Verde</option>
-                    <option value="Cayman Islands">Cayman Islands</option>
-                    <option value="Central African Republic">Central African Republic</option>
-                    <option value="Chad">Chad</option>
-                    <option value="Channel Islands">Channel Islands</option>
-                    <option value="Chile">Chile</option>
-                    <option value="China">China</option>
-                    <option value="Christmas Island">Christmas Island</option>
-                    <option value="Cocos Island">Cocos Island</option>
-                    <option value="Colombia">Colombia</option>
-                    <option value="Comoros">Comoros</option>
-                    <option value="Congo">Congo</option>
-                    <option value="Cook Islands">Cook Islands</option>
-                    <option value="Costa Rica">Costa Rica</option>
-                    <option value="Cote DIvoire">Cote DIvoire</option>
-                    <option value="Croatia">Croatia</option>
-                    <option value="Cuba">Cuba</option>
-                    <option value="Curaco">Curacao</option>
-                    <option value="Cyprus">Cyprus</option>
-                    <option value="Czech Republic">Czech Republic</option>
-                    <option value="Denmark">Denmark</option>
-                    <option value="Djibouti">Djibouti</option>
-                    <option value="Dominica">Dominica</option>
-                    <option value="Dominican Republic">Dominican Republic</option>
-                    <option value="East Timor">East Timor</option>
-                    <option value="Ecuador">Ecuador</option>
-                    <option value="Egypt">Egypt</option>
-                    <option value="El Salvador">El Salvador</option>
-                    <option value="Equatorial Guinea">Equatorial Guinea</option>
-                    <option value="Eritrea">Eritrea</option>
-                    <option value="Estonia">Estonia</option>
-                    <option value="Ethiopia">Ethiopia</option>
-                    <option value="Falkland Islands">Falkland Islands</option>
-                    <option value="Faroe Islands">Faroe Islands</option>
-                    <option value="Fiji">Fiji</option>
-                    <option value="Finland">Finland</option>
-                    <option value="France">France</option>
-                    <option value="French Guiana">French Guiana</option>
-                    <option value="French Polynesia">French Polynesia</option>
-                    <option value="French Southern Ter">French Southern Ter</option>
-                    <option value="Gabon">Gabon</option>
-                    <option value="Gambia">Gambia</option>
-                    <option value="Georgia">Georgia</option>
-                    <option value="Germany">Germany</option>
-                    <option value="Ghana">Ghana</option>
-                    <option value="Gibraltar">Gibraltar</option>
-                    <option value="Great Britain">Great Britain</option>
-                    <option value="Greece">Greece</option>
-                    <option value="Greenland">Greenland</option>
-                    <option value="Grenada">Grenada</option>
-                    <option value="Guadeloupe">Guadeloupe</option>
-                    <option value="Guam">Guam</option>
-                    <option value="Guatemala">Guatemala</option>
-                    <option value="Guinea">Guinea</option>
-                    <option value="Guyana">Guyana</option>
-                    <option value="Haiti">Haiti</option>
-                    <option value="Hawaii">Hawaii</option>
-                    <option value="Honduras">Honduras</option>
-                    <option value="Hong Kong">Hong Kong</option>
-                    <option value="Hungary">Hungary</option>
-                    <option value="Iceland">Iceland</option>
-                    <option value="Indonesia">Indonesia</option>
-                    <option value="India">India</option>
-                    <option value="Iran">Iran</option>
-                    <option value="Iraq">Iraq</option>
-                    <option value="Ireland">Ireland</option>
-                    <option value="Isle of Man">Isle of Man</option>
-                    <option value="Israel">Israel</option>
-                    <option value="Italy">Italy</option>
-                    <option value="Jamaica">Jamaica</option>
-                    <option value="Japan">Japan</option>
-                    <option value="Jordan">Jordan</option>
-                    <option value="Kazakhstan">Kazakhstan</option>
-                    <option value="Kenya">Kenya</option>
-                    <option value="Kiribati">Kiribati</option>
-                    <option value="Korea North">Korea North</option>
-                    <option value="Korea Sout">Korea South</option>
-                    <option value="Kuwait">Kuwait</option>
-                    <option value="Kyrgyzstan">Kyrgyzstan</option>
-                    <option value="Laos">Laos</option>
-                    <option value="Latvia">Latvia</option>
-                    <option value="Lebanon">Lebanon</option>
-                    <option value="Lesotho">Lesotho</option>
-                    <option value="Liberia">Liberia</option>
-                    <option value="Libya">Libya</option>
-                    <option value="Liechtenstein">Liechtenstein</option>
-                    <option value="Lithuania">Lithuania</option>
-                    <option value="Luxembourg">Luxembourg</option>
-                    <option value="Macau">Macau</option>
-                    <option value="Macedonia">Macedonia</option>
-                    <option value="Madagascar">Madagascar</option>
-                    <option value="Malaysia">Malaysia</option>
-                    <option value="Malawi">Malawi</option>
-                    <option value="Maldives">Maldives</option>
-                    <option value="Mali">Mali</option>
-                    <option value="Malta">Malta</option>
-                    <option value="Marshall Islands">Marshall Islands</option>
-                    <option value="Martinique">Martinique</option>
-                    <option value="Mauritania">Mauritania</option>
-                    <option value="Mauritius">Mauritius</option>
-                    <option value="Mayotte">Mayotte</option>
-                    <option value="Mexico">Mexico</option>
-                    <option value="Midway Islands">Midway Islands</option>
-                    <option value="Moldova">Moldova</option>
-                    <option value="Monaco">Monaco</option>
-                    <option value="Mongolia">Mongolia</option>
-                    <option value="Montserrat">Montserrat</option>
-                    <option value="Morocco">Morocco</option>
-                    <option value="Mozambique">Mozambique</option>
-                    <option value="Myanmar">Myanmar</option>
-                    <option value="Nambia">Nambia</option>
-                    <option value="Nauru">Nauru</option>
-                    <option value="Nepal">Nepal</option>
-                    <option value="Netherland Antilles">Netherland Antilles</option>
-                    <option value="Netherlands">Netherlands (Holland, Europe)</option>
-                    <option value="Nevis">Nevis</option>
-                    <option value="New Caledonia">New Caledonia</option>
-                    <option value="New Zealand">New Zealand</option>
-                    <option value="Nicaragua">Nicaragua</option>
-                    <option value="Niger">Niger</option>
-                    <option value="Nigeria">Nigeria</option>
-                    <option value="Niue">Niue</option>
-                    <option value="Norfolk Island">Norfolk Island</option>
-                    <option value="Norway">Norway</option>
-                    <option value="Oman">Oman</option>
-                    <option value="Pakistan">Pakistan</option>
-                    <option value="Palau Island">Palau Island</option>
-                    <option value="Palestine">Palestine</option>
-                    <option value="Panama">Panama</option>
-                    <option value="Papua New Guinea">Papua New Guinea</option>
-                    <option value="Paraguay">Paraguay</option>
-                    <option value="Peru">Peru</option>
-                    <option value="Phillipines">Philippines</option>
-                    <option value="Pitcairn Island">Pitcairn Island</option>
-                    <option value="Poland">Poland</option>
-                    <option value="Portugal">Portugal</option>
-                    <option value="Puerto Rico">Puerto Rico</option>
-                    <option value="Qatar">Qatar</option>
-                    <option value="Republic of Montenegro">Republic of Montenegro</option>
-                    <option value="Republic of Serbia">Republic of Serbia</option>
-                    <option value="Reunion">Reunion</option>
-                    <option value="Romania">Romania</option>
-                    <option value="Russia">Russia</option>
-                    <option value="Rwanda">Rwanda</option>
-                    <option value="St Barthelemy">St Barthelemy</option>
-                    <option value="St Eustatius">St Eustatius</option>
-                    <option value="St Helena">St Helena</option>
-                    <option value="St Kitts-Nevis">St Kitts-Nevis</option>
-                    <option value="St Lucia">St Lucia</option>
-                    <option value="St Maarten">St Maarten</option>
-                    <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
-                    <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
-                    <option value="Saipan">Saipan</option>
-                    <option value="Samoa">Samoa</option>
-                    <option value="Samoa American">Samoa American</option>
-                    <option value="San Marino">San Marino</option>
-                    <option value="Sao Tome & Principe">Sao Tome & Principe</option>
-                    <option value="Saudi Arabia">Saudi Arabia</option>
-                    <option value="Senegal">Senegal</option>
-                    <option value="Seychelles">Seychelles</option>
-                    <option value="Sierra Leone">Sierra Leone</option>
-                    <option value="Singapore">Singapore</option>
-                    <option value="Slovakia">Slovakia</option>
-                    <option value="Slovenia">Slovenia</option>
-                    <option value="Solomon Islands">Solomon Islands</option>
-                    <option value="Somalia">Somalia</option>
-                    <option value="South Africa">South Africa</option>
-                    <option value="Spain">Spain</option>
-                    <option value="Sri Lanka">Sri Lanka</option>
-                    <option value="Sudan">Sudan</option>
-                    <option value="Suriname">Suriname</option>
-                    <option value="Swaziland">Swaziland</option>
-                    <option value="Sweden">Sweden</option>
-                    <option value="Switzerland">Switzerland</option>
-                    <option value="Syria">Syria</option>
-                    <option value="Tahiti">Tahiti</option>
-                    <option value="Taiwan">Taiwan</option>
-                    <option value="Tajikistan">Tajikistan</option>
-                    <option value="Tanzania">Tanzania</option>
-                    <option value="Thailand">Thailand</option>
-                    <option value="Togo">Togo</option>
-                    <option value="Tokelau">Tokelau</option>
-                    <option value="Tonga">Tonga</option>
-                    <option value="Trinidad & Tobago">Trinidad & Tobago</option>
-                    <option value="Tunisia">Tunisia</option>
-                    <option value="Turkey">Turkey</option>
-                    <option value="Turkmenistan">Turkmenistan</option>
-                    <option value="Turks & Caicos Is">Turks & Caicos Is</option>
-                    <option value="Tuvalu">Tuvalu</option>
-                    <option value="Uganda">Uganda</option>
-                    <option value="United Kingdom">United Kingdom</option>
-                    <option value="Ukraine">Ukraine</option>
-                    <option value="United Arab Erimates">United Arab Emirates</option>
-                    <option value="United States of America">United States of America</option>
-                    <option value="Uraguay">Uruguay</option>
-                    <option value="Uzbekistan">Uzbekistan</option>
-                    <option value="Vanuatu">Vanuatu</option>
-                    <option value="Vatican City State">Vatican City State</option>
-                    <option value="Venezuela">Venezuela</option>
-                    <option value="Vietnam">Vietnam</option>
-                    <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
-                    <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
-                    <option value="Wake Island">Wake Island</option>
-                    <option value="Wallis & Futana Is">Wallis & Futana Is</option>
-                    <option value="Yemen">Yemen</option>
-                    <option value="Zaire">Zaire</option>
-                    <option value="Zambia">Zambia</option>
-                    <option value="Zimbabwe">Zimbabwe</option>
-                </optgroup>
-                 </select></div><br>
-                 <br>
-                 <button class="form-submit" id="submit-button">Submit</button>
-                <script>
+            
+            <!-- Password tab <1> -->
+            
+            <div class="tab">
+                <!-- password and passwor confirm -->
 
-                    //password match check
+                <div id="float-container" class="float-container">
+                    <label for="pw" class="inner-label">Password</label>
+                    <i class="fa fa-eye password-toggle-button" aria-hidden="true" onclick="pwtextswitch()"></i>
+                    <input type="password" class="floatField" id="pw" onkeyup='pwcheck()'>
+                </div>
 
-                    function pwcheck(){
-                        var password = $("#pw").val();
-                        var passwordconfirm = $("#pwconfirm").val();     
-                        
-                        if (password == passwordconfirm)
-                            {
-                                $(".password-match").css("opacity", "0");
-                            }
-                            else{
-                                $(".password-match").css("opacity", "1");
-                            }
-                    }
-                    $(document).ready(function(){
-                        $('#pw, #pwconfirm').keyup(pwcheck);
-                    })
+                <!-- Password caution text -->
+                
+                <div id="warn-parent">                   
+                    <div id="warn-text">
+                        <i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i>
+                        Password should be a minimum of 8 characters
+                    </div>
+                    <!-- password checks out-->
+                    <div id="warn-text2">
+                        <i class="fa fa-check-circle fa-lg" aria-hidden="true"></i>
+                        Password matches
+                    </div>
+                </div>
+                <br>
+                <!-- Confirm Password -->
+                <div id="float-container" class="float-container" onclick="document.getElementById('pwconfirm').focus(); return false;">
+                    <label for="pwconfirm" class="inner-label">Retype Password</label>
+                    <i class="fa fa-eye password-toggle-button" id="password-toggle-buttons" onclick="pwtextswitch()"></i>
+                    <input type="password" class="floatField" id="pwconfirm" onkeyup="pwcheck2(); pwcheck()">
+                </div>
+                <!-- Password Match text div-->
+                <div id="password-match"><i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i> Passwords do not match!</div>
+            <br>
+            </div>
 
-                    // inner label controller
+            <!-- Location tab <2>-->
 
+            <div class="tab">
+            <!-- State-->
+            <div id="float-container" class="float-container">
+                <label for="state">State</label>
+                <input id="state">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div id="float-container" class="float-container">
+                <label for="address">Country</label>
+                <input id="Country" type="text" height="4em">
+            </div>
+            </div>
+            
+            <!-- personal information -->
+
+            <div class="tab">
+                <div id="float-container" class="float-container">
+                    <label for="dob">Date of Birth</label>
+                    <input id="dob" type="text" class="datetime">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div>
+
+                </div>
+            </div>
+
+
+
+            <!-- Set Appointment tab <4> -->
+
+            <div class="tab">
+            <!-- date&time -->
+            <div id="float-container" class="float-container">
+                <label for="name">Appointment Date</label>
+                <input id="datetime" class="datetime" type="text">
+            </div>
+            </div>
+
+            <!-- space for distance -->
+            <br>
+            
+            <!-- back button -->
+            <span id="back-button" onclick="buttonchanger(); pagedown()">Back</span>
+            
+            <!-- button spacer span -->
+            <span id="button-spacer"></span>
+            
+            <!-- submit button -->
+            <span id="submit-button">Submit</span>
+            
+            <!-- next button -->
+            <span id="next-button" onclick="buttonchanger(); pageup()">Next</span>
+
+
+        </div>
+        
+        <!-- flatpicker js instancer -->
+
+        <script>
+            //new flatpickr instance
+            flatpickr(".datetime", {});
+        </script>   
+
+        <!-- popper tooltips -->
+
+        <script>
+
+
+        </script>
+
+        <!-- general -->
+
+        <script>
+            //onload hideall
+            
+            document.getElementById("warn-text").style.visibility = "hidden";
+            document.getElementById("warn-text2").style.visibility = "hidden";
+            document.getElementById("password-match").style.visibility = "hidden";
+            
+            //pagetabs
+
+                //set current page to 0
+            var page = 0;
+                //create tabs array
+            const tabs = document.getElementsByClassName("tab");
+                //tabs array size
+            const tablen = tabs.length;
+                //loop to hide all tabs
+            for (var i = 0; i < tablen; i++) {
+                tabs[i].style.display = 'none';
+            };
+            tabs[0].style.display="block";
+            
+            //multipage controller
+            
+            //pageforward
+
+            function pageup(){
+                if(page == tablen - 1){
+                    return;
+                }
+                page++;
+                var n = page - 1;
+                tabs[n].style.display="none";
+                tabs[page].style.display="block";
+                console.log(page);
+                console.log(n);
+            }
+
+            
+            //pagebackwards
+            
+            function pagedown(){
+                if(page == 0){
+                    return;
+                }
+                page--;
+                var n = page + 1;
+                tabs[n].style.display="none";
+                tabs[page].style.display="block";
+                console.log(page);
+                console.log(n);
+            }
+            
+            //submitter
+            function buttonchanger(){
+                if(page == 0){
+                document.getElementById("back-button").style.display= "none";
+                document.getElementById("submit-button").style.display="none";
+                }
+                if(page != 0 && page != tablen -2){
+                    document.getElementById("back-button").style.display="inline-block";
+                }
+                if(page == tablen - 2){
+                    document.getElementById("next-button").style.display="none";
+                    document.getElementById("back-button").style.display="none";
+                    document.getElementById("submit-button").style.display="inline-block";
+                }
+            }
+            
+            
+            //initial check for page1
+            buttonchanger();
+
+
+            //sticky navbar
+            window.onscroll = function() {scroller()};
+
+            // Get the navbar
+            var navbar = document.getElementById("navbar");
+
+            // Get the offset position of the navbar
+            var sticky = navbar.offsetTop;
+
+            // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+            function scroller() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+            }
+
+            //floating input controller
+            
+            const FloatLabel = (() => {
+  
+                // add active class
+                const handleFocus = (e) => {
+                const target = e.target;
+                target.parentNode.classList.add('active');
+                target.setAttribute('placeholder', target.getAttribute('data-placeholder'));
+                };
+
+                // remove active class
+                const handleBlur = (e) => {
+                const target = e.target;
+                if(!target.value) {
+                target.parentNode.classList.remove('active');
+                }
+                target.removeAttribute('placeholder');
+                };
+
+                // register events
+                const bindEvents = (element) => {
+                const floatField = element.querySelector('input');
+                floatField.addEventListener('focus', handleFocus);
+                floatField.addEventListener('blur', handleBlur);    
+                };
+
+                // get DOM elements
+                const init = () => {
+                const floatContainers = document.querySelectorAll('.float-container');
+
+                floatContainers.forEach((element) => {
+
+                if (element.querySelector('input').value) {
+                element.classList.add('active');
+                }
+
+                bindEvents(element);
+                });
+                };
+
+                return {
+                init: init
+                };
+                })();
+
+                FloatLabel.init();
+            
 
                     //password visibility toggle
 
-                    $(document).ready(function(){
-                        $(".password-toggle-button").click(function(){
-                            if($(".password").attr("type") == 'password')
+                    function pwtextswitch(){
+                        
+                        if(document.getElementById("pw").getAttribute("type") == 'password')
                             {
-                                $(".password").attr("type", "text");
+                                console.log("y");
+                                document.getElementById("pw").type = "text";
+                                return;
                             }
-                            else{
-                                $(".password").attr("type", "password");
-                            }
-                        })
-                    });
-
-                    //password length check
-                    
-                    function passwordlength() {
-                        var password = $("#pw").val();
-                        var passwordconfirm = $("#pwconfirm").val();
-                        if(password.length < 8 && password != "default text")
-                        {
-                            $(".warn-text").css("opacity", "1");
-                        }
-                        else if(password.length < 8 && password != "default text") {
-                            $(".warn-text").css("opacity", "1");
-                        }
-                        else{
-                            $(".warn-text").css("opacity", "0");
-                        }}
-                    $(document).ready(function(){
-                        $("#pw").keyup(passwordlength);
-                    });
-
-                    //inner label controller
-                    $(document).ready(labelmove);
-                    function labelmove(){
-                        var allinput = $("input:text, input:password")
-                        if()
+                        if(document.getElementById("pw").getAttribute("type") == 'text'){
+                                console.log("y");
+                                document.getElementById("pw").type = "password";
+                                return;
+                            }    
                     }
-                </script>
-            </div>
-        </div>
+                    function pwtextswitch2(){
+                        if(document.getElementById("pwconfirm").getAttribute("type") == 'password')
+                            {
+                                console.log("y");
+                                document.getElementById("pwconfirm").type = "text";
+                                return;
+                            }
+                        if(document.getElementById("pwconfirm").getAttribute("type") == 'text'){
+                                console.log("y");
+                                document.getElementById("pwconfirm").type = "password";
+                                return;
+                            }
+                    }
+
+                    //password checker function
+                
+                    function pwcheck(){
+                        var password = document.getElementById("pw").value;
+                        var passwordconfirm = document.getElementById("pwconfirm").value;
+                        if(password.length < 8){
+                            document.getElementById("warn-text").style.visibility = "visible";
+                            document.getElementById("warn-text2").style.visibility = "hidden";
+                            document.getElementById("password-match").style.visibility = "hidden";
+                        }
+                        if (password == passwordconfirm && password.length >= 8){
+                            document.getElementById("password-match").style.visibility = "hidden";
+                            var content = document.getElementById('warn-text2');
+                            var parent = content.parentNode;
+                            parent.insertBefore(content, parent.firstChild);
+                            document.getElementById("warn-text2").style.visibility = "visible";
+                            document.getElementById("warn-text").style.visibility = "hidden";
+                        }
+                        if(password != passwordconfirm && password.length >= 8){
+                            document.getElementById("warn-text").style.visibility = "hidden";
+                            document.getElementById("password-match").style.visibility = "visible";
+                        }
+                        if(passwordconfirm == ''){
+                            document.getElementById("password-match").style.visibility = "hidden";
+                        }
+                    }
+
+                    function pwcheck2(){
+                        var password = document.getElementById("pw").value;
+                        var passwordconfirm = document.getElementById("pwconfirm").value;
+                        if(password != passwordconfirm && password.length >= 8){
+                            document.getElementById("password-match").style.visibility = "visible";
+                        }
+                    }
+
+                    var x, i, j, l, ll, selElmnt, a, b, c;
+                    /* Look for any elements with the class "custom-select": */
+                    x = document.getElementsByClassName("custom-select");
+                    l = x.length;
+                    for (i = 0; i < l; i++) {
+                    selElmnt = x[i].getElementsByTagName("select")[0];
+                    ll = selElmnt.length;
+                    /* For each element, create a new DIV that will act as the selected item: */
+                    a = document.createElement("DIV");
+                    a.setAttribute("class", "select-selected");
+                    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+                    x[i].appendChild(a);
+                    /* For each element, create a new DIV that will contain the option list: */
+                    b = document.createElement("DIV");
+                    b.setAttribute("class", "select-items select-hide");
+                    for (j = 1; j < ll; j++) {
+                        /* For each option in the original select element,
+                        create a new DIV that will act as an option item: */
+                        c = document.createElement("DIV");
+                        c.innerHTML = selElmnt.options[j].innerHTML;
+                        c.addEventListener("click", function(e) {
+                            /* When an item is clicked, update the original select box,
+                            and the selected item: */
+                            var y, i, k, s, h, sl, yl;
+                            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                            sl = s.length;
+                            h = this.parentNode.previousSibling;
+                            for (i = 0; i < sl; i++) {
+                            if (s.options[i].innerHTML == this.innerHTML) {
+                                s.selectedIndex = i;
+                                h.innerHTML = this.innerHTML;
+                                y = this.parentNode.getElementsByClassName("same-as-selected");
+                                yl = y.length;
+                                for (k = 0; k < yl; k++) {
+                                y[k].removeAttribute("class");
+                                }
+                                this.setAttribute("class", "same-as-selected");
+                                break;
+                            }
+                            }
+                            h.click();
+                        });
+                        b.appendChild(c);
+                    }
+                    x[i].appendChild(b);
+                    a.addEventListener("click", function(e) {
+                        /* When the select box is clicked, close any other select boxes,
+                        and open/close the current select box: */
+                        e.stopPropagation();
+                        closeAllSelect(this);
+                        this.nextSibling.classList.toggle("select-hide");
+                        this.classList.toggle("select-arrow-active");
+                    });
+                    }
+
+                    function closeAllSelect(elmnt) {
+                    /* A function that will close all select boxes in the document,
+                    except the current select box: */
+                    var x, y, i, xl, yl, arrNo = [];
+                    x = document.getElementsByClassName("select-items");
+                    y = document.getElementsByClassName("select-selected");
+                    xl = x.length;
+                    yl = y.length;
+                    for (i = 0; i < yl; i++) {
+                        if (elmnt == y[i]) {
+                        arrNo.push(i)
+                        } else {
+                        y[i].classList.remove("select-arrow-active");
+                        }
+                    }
+                    for (i = 0; i < xl; i++) {
+                        if (arrNo.indexOf(i)) {
+                        x[i].classList.add("select-hide");
+                        }
+                    }
+                    }
+
+                    /* If the user clicks anywhere outside the select box,
+                    then close all select boxes: */
+                    document.addEventListener("click", closeAllSelect); 
+        </script>
     </body>
 </html>
