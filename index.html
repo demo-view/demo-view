@@ -53,8 +53,7 @@
                 </div>
 
                 <!-- Password caution text -->
-                
-                <div id="warn-parent">                   
+                <div>
                     <div id="warn-text">
                         <i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i>
                         Password should be a minimum of 8 characters
@@ -65,16 +64,14 @@
                         Password matches
                     </div>
                 </div>
-                <br>
                 <!-- Confirm Password -->
                 <div id="float-container" class="float-container" onclick="document.getElementById('pwconfirm').focus(); return false;">
                     <label for="pwconfirm" class="inner-label">Retype Password</label>
-                    <i class="fa fa-eye password-toggle-button" id="password-toggle-buttons" onclick="pwtextswitch()"></i>
+                    <i class="fa fa-eye password-toggle-button" id="password-toggle-buttons" onclick="pwtextswitch2()"></i>
                     <input type="password" class="floatField" id="pwconfirm" onkeyup="pwcheck2(); pwcheck()">
                 </div>
                 <!-- Password Match text div-->
                 <div id="password-match"><i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i> Passwords do not match!</div>
-            <br>
             </div>
 
             <!-- Location tab <2>-->
@@ -92,6 +89,8 @@
                 <label for="address">Country</label>
                 <input id="Country" type="text" height="4em">
             </div>
+            <br>
+            <br>
             </div>
             
             <!-- personal information -->
@@ -104,9 +103,19 @@
                 <br>
                 <br>
                 <br>
-                <div>
-
-                </div>
+                <!-- gender -->    
+            <div class="check-height">
+                <span class="checker">
+                    <input type="radio" id="test1" name="radio-group" checked>
+                    <label for="test1">Apple</label>
+                </span>
+                <span id="checkbox-spacer"></span>
+                <span class="checker">
+                    <input type="radio" id="test2" name="radio-group">
+                    <label for="test2">Peach</label>
+                </span>
+            </div>
+                <BR>
             </div>
 
 
@@ -114,18 +123,22 @@
             <!-- Set Appointment tab <4> -->
 
             <div class="tab">
-            <!-- date&time -->
-            <div id="float-container" class="float-container">
-                <label for="name">Appointment Date</label>
-                <input id="datetime" class="datetime" type="text">
-            </div>
+                <!-- date&time -->
+                <div id="float-container" class="float-container">
+                    <label for="name">Appointment Date</label>
+                    <input id="datetime" class="datetime" type="text">
+                </div>
+                <br>
+                <br>
+                <br>
+
             </div>
 
             <!-- space for distance -->
             <br>
             
             <!-- back button -->
-            <span id="back-button" onclick="buttonchanger(); pagedown()">Back</span>
+            <span id="back-button" onclick="pagedown(); buttonchanger()">Back</span>
             
             <!-- button spacer span -->
             <span id="button-spacer"></span>
@@ -134,7 +147,7 @@
             <span id="submit-button">Submit</span>
             
             <!-- next button -->
-            <span id="next-button" onclick="buttonchanger(); pageup()">Next</span>
+            <span id="next-button" onclick="pageup(); buttonchanger();">Next</span>
 
 
         </div>
@@ -213,12 +226,13 @@
                 document.getElementById("back-button").style.display= "none";
                 document.getElementById("submit-button").style.display="none";
                 }
-                if(page != 0 && page != tablen -2){
+                if(page != 0 && page != tablen -1){
                     document.getElementById("back-button").style.display="inline-block";
+                    document.getElementById("next-button").style.display="inline-block";
+                    document.getElementById("submit-button").style.display="none";
                 }
-                if(page == tablen - 2){
+                if(page == tablen - 1){
                     document.getElementById("next-button").style.display="none";
-                    document.getElementById("back-button").style.display="none";
                     document.getElementById("submit-button").style.display="inline-block";
                 }
             }
@@ -440,6 +454,7 @@
                     /* If the user clicks anywhere outside the select box,
                     then close all select boxes: */
                     document.addEventListener("click", closeAllSelect); 
+                    
         </script>
     </body>
 </html>

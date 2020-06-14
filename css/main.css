@@ -53,7 +53,6 @@
         margin-left: 3%;
         margin-right: 20%;
         width: 80%;
-        z-index: 0;
       }
       
   }
@@ -116,7 +115,6 @@
         margin-left: 3%;
         margin-right: 20%;
         width: 90%;
-        z-index: 150;
       }
       
 
@@ -178,7 +176,6 @@
         margin-left: 3%;
         margin-right: 20%;
         width: 90%;
-        z-index: 150;
       }
       
   }
@@ -239,7 +236,6 @@
         margin-left: 3%;
         margin-right: 20%;
         width: 90%;
-        z-index: 150;
       }
       
   
@@ -252,7 +248,7 @@
 
     h1{
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-size: 8em;
+      font-size: 6em;
       color: #eeeeee;
     }
   
@@ -300,7 +296,6 @@
         margin-left: 3%;
         margin-right: 20%;
         width: 90%;
-        z-index: 150;
       }
       
 
@@ -325,13 +320,12 @@ body{
 
 /* Input manager */
 
-label{
+.float-container label{
   font-size: 1em;
   font-family: Arial, Helvetica, sans-serif;
   color: #5e5e5e;
   position: absolute;
   margin-left: 3%;
-  z-index: 0;
   transform: translate(0, 0) scale(1);
   pointer-events: none;
   user-select: none;
@@ -394,14 +388,11 @@ label{
   color: #eeeeee;
   font-family: Helvetica;
   font-size: .8em;
-  line-height: 1.3rem;
 }
 #warn-text2{
-  position: absolute;
   color: #eeeeee;
   font-family: Helvetica;
   font-size: .8em;
-  line-height: 1.3rem;
 }
 
 #password-match{
@@ -527,72 +518,69 @@ label{
   width: 1em;
 }
 
+/* custom checkbox */
 
-/* Cutom Dropwdown Controller */
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #dfecff;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #1a73e8;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
 
- .custom-select {
-  position: relative;
+.checker label{
+  color: #dfecff;
   font-family: Arial;
-  color: #333333;
-  
+}
+.check-height{
+  padding-top: .6em;
+  padding-bottom: .6em;
 }
 
-.custom-select select {
-  display: none; /*hide original */
+#checkbox-spacer{
+  display: inline-block;
+  width: 5em;
 }
-
-.select-selected {
-  background-color: #dfecff;
-  border-radius: 15px;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  height: 2em;
-}
-
-/* Style arrow */
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-
-/* arrow change dir */
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
-
-/* itemstyler */
-.select-items div,.select-selected {
-  color: #333333;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent #1a73e8 transparent;
-  cursor: pointer;
-}
-
-/* Style items */
-.select-items {
-  position: absolute;
-  background-color: #dfecff;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-/* Hide the items when the select box is closed: */
-.select-hide {
-  display: none;
-}
-
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-/* scrollable js inserts */
